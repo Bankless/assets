@@ -1,0 +1,394 @@
+/* =========================================
+   App Layout
+   ========================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.header {
+  background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+  border-bottom: 1px solid #1a1a1a;
+  padding: 24px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.logo-accent {
+  background: linear-gradient(135deg, #c850c0, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #555;
+}
+
+.refresh-btn {
+  background: linear-gradient(135deg, #c850c0, #8b5cf6);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.refresh-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   Error Banner
+   ========================================= */
+
+.error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  padding: 12px 32px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =========================================
+   Main Content
+   ========================================= */
+
+.main {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 24px 32px;
+}
+
+/* =========================================
+   Filters
+   ========================================= */
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #161616;
+  color: #888;
+  border: 1px solid #222;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #444;
+  color: #ccc;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #c850c0, #8b5cf6);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* =========================================
+   Table
+   ========================================= */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+  background: #111;
+}
+
+.watchlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.watchlist-table thead {
+  background: linear-gradient(135deg, #c850c0, #8b5cf6);
+}
+
+.watchlist-table thead th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.watchlist-table thead th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.watchlist-table thead th.sortable:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.watchlist-table tbody tr {
+  border-bottom: 1px solid #1a1a1a;
+  transition: background 0.15s;
+}
+
+.watchlist-table tbody tr:hover {
+  background: #161616;
+}
+
+.watchlist-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.watchlist-table tbody td {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.loading-row {
+  opacity: 0.6;
+}
+
+/* =========================================
+   Table Cells
+   ========================================= */
+
+.td-rank {
+  color: #444;
+  font-size: 12px;
+  font-weight: 500;
+  width: 40px;
+}
+
+.td-asset {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.asset-name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+}
+
+.equity-badge {
+  font-size: 9px;
+  font-weight: 700;
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.td-ecosystem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eco-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.td-category {
+  color: #777;
+  font-size: 13px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.td-price {
+  font-weight: 600;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.td-change {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.td-change.positive {
+  color: #22c55e;
+}
+
+.td-change.negative {
+  color: #ef4444;
+}
+
+.td-mcap {
+  color: #999;
+  font-variant-numeric: tabular-nums;
+}
+
+.td-target {
+  color: #c0c0c0;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================
+   Status Badges
+   ========================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.status-badge.over {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.status-badge.under {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+.diff-pct {
+  font-weight: 500;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.status-na {
+  color: #333;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+.footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 20px 32px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer p {
+  font-size: 12px;
+  color: #444;
+}
+
+.footer-note {
+  margin-top: 4px;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .filters {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .watchlist-table {
+    font-size: 13px;
+  }
+
+  .th-category,
+  .td-category,
+  .th-mcap,
+  .td-mcap {
+    display: none;
+  }
+}
